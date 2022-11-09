@@ -1,5 +1,5 @@
 import datetime
-import iso8601
+import dateutil.parser
 
 __all__ = ("parse_timestamp",)
 
@@ -18,4 +18,4 @@ def parse_timestamp(timestamp: str) -> datetime.datetime:
         The parsed timestamp.
 
     """
-    return iso8601.parse_date(timestamp, datetime.timezone.utc)
+    return dateutil.parser.isoparse(timestamp)
